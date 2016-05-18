@@ -1,11 +1,3 @@
-typedef struct Stacks
-{
-    size_t max_size;
-    size_t size;
-    int *sp;
-   
-} Stack;
-
 int is_stack_full(Stack *ptrStack)
 {
     if(ptrStack->size == ptrStack->max_size)
