@@ -1,5 +1,2 @@
 # Data-Structures-Algorithms
-
-Insert C code for Data Structure
-
-git commit -m "Commit message"
+Data Structures and Algorithms implemented in C language (C89)
