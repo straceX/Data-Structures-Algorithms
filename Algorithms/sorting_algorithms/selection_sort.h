@@ -1,0 +1,1 @@
+int *selection_sort(int, size_t);
