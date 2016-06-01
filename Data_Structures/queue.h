@@ -1,5 +1,10 @@
-int enqueue(int *,int);
-int dequeue(int *);
-int peek(int *);
-int isfull(int *);
-int isempty(int *);
+size_t SIZE = 0;
+
+int front = -1;
+int rear  = -1;
+
+int *ptrQueue = NULL;
+
+void enqueue(int);
+int dequeue();
+void display_queue();
