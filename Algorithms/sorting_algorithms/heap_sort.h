@@ -1,0 +1,1 @@
+int *heap_sort(int [], size_t);
