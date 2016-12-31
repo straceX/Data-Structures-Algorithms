@@ -1,4 +1,14 @@
-#include "gnome_sort.h"
+void swap2int(int *val1, int *val2)
+{
+	if (*val1 != *val2)
+	{
+		*val1 = (*val1) ^ (*val2);
+		*val2 = (*val1) ^ (*val2);
+		*val1 = (*val1) ^ (*val2);
+	}
+	return;
+
+}
 
 int *gnome_sort(int ptrArray[], size_t size)
 {
@@ -13,10 +23,8 @@ int *gnome_sort(int ptrArray[], size_t size)
 	{
 		if (ptrArray[iter - 1] > ptrArray[iter])
 		{
-			tmp = ptrArray[iter];
-			ptrArray[iter] = ptrArray[iter - 1];
-			ptrArray[iter - 1] = tmp;
 
+			swap2int(ptrArray + iter, ptrArray + iter - 1);
 			if (--iter)
 				continue;
 				
