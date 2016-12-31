@@ -6,7 +6,7 @@ void swap2int(int *val1,int *val2)
 }
 
 
-int *comb_sort(int ptrArray[], size_t size)
+int *comb_sort(int ptrArray[], const size_t size)
 {
 	int gap = size;
 	int swapped = 0;

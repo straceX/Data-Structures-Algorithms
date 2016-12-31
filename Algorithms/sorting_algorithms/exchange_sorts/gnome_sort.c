@@ -10,7 +10,7 @@ void swap2int(int *val1, int *val2)
 
 }
 
-int *gnome_sort(int ptrArray[], size_t size)
+int *gnome_sort(int ptrArray[], const size_t size)
 {
 	int tmp;
 	size_t iter		= 1;
