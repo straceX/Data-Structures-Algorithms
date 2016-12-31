@@ -1,3 +1,9 @@
+void swap2int(int *val1,int *val2)
+{
+    *val1 = (*val1) ^ (*val2);
+    *val2 = (*val1) ^ (*val2);
+    *val1 = (*val1) ^ (*val2);
+}
 
 
 int *comb_sort(int ptrArray[], size_t size)
@@ -23,9 +29,7 @@ int *comb_sort(int ptrArray[], size_t size)
 		{
 			if (ptrArray[iter]>ptrArray[jiter])
 			{
-				tmp = ptrArray[iter];
-				ptrArray[iter] = ptrArray[jiter];
-				ptrArray[jiter] = tmp;
+				swap2int(ptrArray+iter,ptrArray+jiter);
 				swapped = 1;
 			}
 		}
