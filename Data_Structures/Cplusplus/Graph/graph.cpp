@@ -26,7 +26,7 @@ auto Graphv1::Graph::printAllAdjacentVertices()
       	std::cout << '[' << index << "]\t----------\t[" << edge << "]\n";
    }
 
-Graphv2::Graph::Graph(int vertexCount)
+Graphv2::Graph::Graph(size_t vertexCount)
     : m_vertexCount{ vertexCount }
     {
     m_adjacentNodes = new bool*[vertexCount];
