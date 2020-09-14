@@ -2,11 +2,11 @@
 
 #include <iostream>
 
-struct BST::node
+struct BST::Node
 	{
-	 node *left;	 
+	 Node *left;	 
      int data;
-	 node *right;
+	 Node *right;
 	};
 
 BST::BST() noexcept
@@ -19,8 +19,8 @@ BST::~BST()
     m_root = makeEmpty(m_root);
     }
 
-auto BST::makeEmpty(BST::node *lroot) noexcept
-    -> BST::node*
+auto BST::makeEmpty(BST::Node *lroot) noexcept
+    -> BST::Node*
     {
     if (!lroot)
         return nullptr;
@@ -30,12 +30,12 @@ auto BST::makeEmpty(BST::node *lroot) noexcept
     return nullptr;
     }
 
-auto BST::insert(int val, BST::node *lroot) noexcept
-    -> BST::node*
+auto BST::insert(int val, BST::Node *lroot) noexcept
+    -> BST::Node*
     {
     if (!lroot)
         {
-        lroot = new BST::node;
+        lroot = new BST::Node;
         lroot->data = val;
         lroot->left = lroot->right = nullptr;
         }
@@ -46,8 +46,8 @@ auto BST::insert(int val, BST::node *lroot) noexcept
     return lroot;
 }
 
-auto BST::findMin(node *lroot) noexcept
-    -> BST::node*
+auto BST::findMin(Node *lroot) noexcept
+    -> BST::Node*
     {
     if (!lroot)
         return nullptr;
@@ -57,8 +57,8 @@ auto BST::findMin(node *lroot) noexcept
         return findMin(lroot->left);
     }
 
-auto BST::findMax(node *lroot) noexcept
-    -> BST::node*
+auto BST::findMax(Node *lroot) noexcept
+    -> BST::Node*
     {
     if (!lroot)
         return nullptr;
@@ -68,10 +68,10 @@ auto BST::findMax(node *lroot) noexcept
         return findMax(lroot->right);
     }
 
-auto BST::remove(int val, node *lroot) noexcept
-    -> BST::node*
+auto BST::remove(int val, Node *lroot) noexcept
+    -> BST::Node*
     {
-    node* temp;
+    auto temp = static_cast<Node*>(nullptr);
     if (!lroot)
         return nullptr;
     else if (val < lroot->data)
@@ -96,7 +96,7 @@ auto BST::remove(int val, node *lroot) noexcept
     return lroot;
     }
 
-auto BST::inorder(node *lroot) noexcept
+auto BST::inorder(Node *lroot) noexcept
     -> void
     {
     if (!lroot)
@@ -106,8 +106,8 @@ auto BST::inorder(node *lroot) noexcept
     inorder(lroot->right);
     }
 
-auto BST::find(node *lroot, int val) noexcept
-    -> BST::node*
+auto BST::find(Node *lroot, int val) noexcept
+    -> BST::Node*
     {
     if (!lroot)
         return nullptr;
